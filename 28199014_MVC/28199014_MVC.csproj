@@ -161,6 +161,13 @@
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\OrdersController.cs" />
     <Compile Include="Controllers\UsersController.cs" />
+    <Compile Include="Doc.aspx.cs">
+      <DependentUpon>Doc.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Doc.aspx.designer.cs">
+      <DependentUpon>Doc.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -227,6 +234,20 @@
     <Content Include="css\owl.theme.css" />
     <Content Include="css\style.css" />
     <Content Include="css\table_color.css" />
+    <Content Include="Doc.aspx" />
+    <Content Include="Doc\404notfound.png" />
+    <Content Include="Doc\aboutUs.png" />
+    <Content Include="Doc\addUser.png" />
+    <Content Include="Doc\contact.png" />
+    <Content Include="Doc\deleteUser.png" />
+    <Content Include="Doc\detailUser.png" />
+    <Content Include="Doc\diaplayOrder.png" />
+    <Content Include="Doc\displayCat.png" />
+    <Content Include="Doc\displayUser.png" />
+    <Content Include="Doc\editUser.png" />
+    <Content Include="Doc\error.png" />
+    <Content Include="Doc\hierarchy.png" />
+    <Content Include="Doc\homepage.png" />
     <Content Include="favicon.ico" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
