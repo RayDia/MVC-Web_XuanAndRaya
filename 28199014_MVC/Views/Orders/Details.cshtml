@@ -1,0 +1,64 @@
+﻿@model _28199014_MVC.Models.Order
+
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<section id="contact" style="padding-top:0px; padding-bottom:50px">
+    <div class="container">
+        <div class="row">
+
+            <!-- Section title
+            ================================================== -->
+            <div class="col-md-offset-2 col-md-8 col-sm-offset-2 col-sm-8" style="margin-top:100px">
+                <div class="section-title">
+
+                    <h1 class="heading" runat="server">Detail of Order</h1>
+                    <p style="color:rgb(108, 105, 105);">Shall I compare thee to a summer's day? Thou art more lovely and more temperate.</p>
+                </div>
+            </div>
+        </div>
+        <div>
+            <hr />
+            <dl class="dl-horizontal">
+                <dt>
+                    @Html.DisplayNameFor(model => model.orderData)
+                </dt>
+
+                <dd>
+                    @Html.DisplayFor(model => model.orderData)
+                </dd>
+
+                <dt>
+                    @Html.DisplayNameFor(model => model.orderDescription)
+                </dt>
+
+                <dd>
+                    @Html.DisplayFor(model => model.orderDescription)
+                </dd>
+
+                <dt>
+                    @Html.DisplayNameFor(model => model.Cat.breed)
+                </dt>
+
+                <dd>
+                    @Html.DisplayFor(model => model.Cat.breed)
+                </dd>
+
+                <dt>
+                    @Html.DisplayNameFor(model => model.User.username)
+                </dt>
+
+                <dd>
+                    @Html.DisplayFor(model => model.User.username)
+                </dd>
+
+            </dl>
+        </div>
+    </div>
+</section>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.oid }) |
+    @Html.ActionLink("Back to List", "SearchIndex")
+</p>

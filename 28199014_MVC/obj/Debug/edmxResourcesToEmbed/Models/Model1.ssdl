@@ -1,0 +1,91 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="Model.Store" Provider="System.Data.SqlServerCe.4.0" ProviderManifestToken="4.0" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="Cat">
+    <Key>
+      <PropertyRef Name="cid" />
+    </Key>
+    <Property Name="cid" Type="int" Nullable="false" />
+    <Property Name="breed" Type="nvarchar" MaxLength="255" Nullable="false" />
+    <Property Name="cgender" Type="nvarchar" MaxLength="255" Nullable="false" />
+    <Property Name="csize" Type="nvarchar" MaxLength="255" Nullable="false" />
+    <Property Name="cfur" Type="nvarchar" MaxLength="255" Nullable="false" />
+    <Property Name="color" Type="nvarchar" MaxLength="255" Nullable="false" />
+    <Property Name="country" Type="nvarchar" MaxLength="255" Nullable="false" />
+    <Property Name="cage" Type="nvarchar" MaxLength="255" Nullable="false" />
+    <Property Name="lifeTime" Type="nvarchar" MaxLength="255" Nullable="false" />
+    <Property Name="cpic" Type="nvarchar" MaxLength="255" Nullable="false" />
+    <Property Name="cthumbnail" Type="nvarchar" MaxLength="255" Nullable="false" />
+    <Property Name="nickname" Type="nvarchar" MaxLength="255" Nullable="false" />
+    <Property Name="discription" Type="nvarchar" MaxLength="255" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Order">
+    <Key>
+      <PropertyRef Name="oid" />
+    </Key>
+    <Property Name="oid" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="orderData" Type="datetime" Nullable="false" />
+    <Property Name="orderDescription" Type="nvarchar" MaxLength="255" Nullable="false" />
+    <Property Name="orderuid" Type="int" Nullable="false" />
+    <Property Name="ordercid" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="User">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="username" Type="nvarchar" MaxLength="255" Nullable="false" />
+    <Property Name="usertype" Type="nvarchar" MaxLength="255" Nullable="false" />
+    <Property Name="email" Type="nvarchar" MaxLength="255" Nullable="false" />
+    <Property Name="password" Type="nvarchar" MaxLength="255" Nullable="false" />
+    <Property Name="birthday" Type="nvarchar" MaxLength="255" Nullable="false" />
+    <Property Name="age" Type="nvarchar" MaxLength="255" Nullable="false" />
+    <Property Name="gender" Type="nvarchar" MaxLength="255" Nullable="false" />
+    <Property Name="catsize" Type="nvarchar" MaxLength="255" Nullable="false" />
+    <Property Name="catfur" Type="nvarchar" MaxLength="255" Nullable="false" />
+    <Property Name="address" Type="nvarchar" MaxLength="255" Nullable="false" />
+    <Property Name="petkeeping" Type="nvarchar" MaxLength="255" Nullable="false" />
+    <Property Name="url" Type="nvarchar" MaxLength="255" Nullable="false" />
+    <Property Name="uphoto" Type="nvarchar" MaxLength="255" />
+  </EntityType>
+  <Association Name="ordercid">
+    <End Role="Cat" Type="Self.Cat" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="Order" Type="Self.Order" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Cat">
+        <PropertyRef Name="cid" />
+      </Principal>
+      <Dependent Role="Order">
+        <PropertyRef Name="ordercid" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="orderuid">
+    <End Role="User" Type="Self.User" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="Order" Type="Self.Order" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="User">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Order">
+        <PropertyRef Name="orderuid" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="ModelStoreContainer">
+    <EntitySet Name="Cat" EntityType="Self.Cat" store:Type="Tables" />
+    <EntitySet Name="Order" EntityType="Self.Order" store:Type="Tables" />
+    <EntitySet Name="User" EntityType="Self.User" store:Type="Tables" />
+    <AssociationSet Name="ordercid" Association="Self.ordercid">
+      <End Role="Cat" EntitySet="Cat" />
+      <End Role="Order" EntitySet="Order" />
+    </AssociationSet>
+    <AssociationSet Name="orderuid" Association="Self.orderuid">
+      <End Role="User" EntitySet="User" />
+      <End Role="Order" EntitySet="Order" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>

@@ -1,0 +1,24 @@
+﻿tr.silver {
+    background-color: white;
+}
+tr.dataHover {
+    background-color: #3A718C;
+}
+tr.dataHoverodd {
+    background-color: #5EA3A6;
+}
+
+dl {
+    color: black;
+    font-size: 19px;
+    margin-left: 380px;
+}
+dd {
+    margin-left: 0px;
+    width: 250px;
+}
+label {
+    color: rgb(221, 97, 42);
+    font-size: 19px;
+    margin-left:50px;
+}

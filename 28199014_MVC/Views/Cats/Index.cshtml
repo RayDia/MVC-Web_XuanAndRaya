@@ -1,0 +1,107 @@
+﻿@model IEnumerable<_28199014_MVC.Models.Cat>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+    @using (Html.BeginForm())
+    {
+    <a>
+        Fur: @Html.TextBox("searchValue")<br />
+        <input type="submit" value="Search" />
+    </a>
+    }
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.breed)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.cgender)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.csize)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.cfur)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.color)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.country)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.cage)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.lifeTime)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.cpic)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.cthumbnail)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.nickname)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.discription)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.breed)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.cgender)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.csize)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.cfur)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.color)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.country)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.cage)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.lifeTime)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.cpic)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.cthumbnail)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.nickname)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.discription)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.cid }) |
+            @Html.ActionLink("Details", "Details", new { id=item.cid }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.cid })
+        </td>
+    </tr>
+}
+
+</table>

@@ -1,0 +1,134 @@
+﻿@model IEnumerable<_28199014_MVC.Models.User>
+
+@{
+    ViewBag.Title = "SearchIndex";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<section id="contact" style="padding-top:0px; padding-bottom:50px">
+        <div class="container">
+            <div class="row">
+
+                <!-- Section title
+                ================================================== -->
+                <div class="col-md-offset-2 col-md-8 col-sm-offset-2 col-sm-8" style="margin-top:100px">
+                    <div class="section-title">
+
+                        <h1 class="heading" runat="server">User</h1>
+                        <p style="color:rgb(108, 105, 105);">Shall I compare thee to a summer's day? Thou art more lovely and more temperate.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="caption" style="width:80%; margin-left:200px">
+            <p style="">
+                @Html.ActionLink("Create New", "Create")
+                @using (Html.BeginForm())
+                {
+                    <a>
+                        Username: @Html.TextBox("searchValue")
+
+                        <input type="submit" value="Search" />
+                    </a>
+                }
+            </p>
+            <table class="table" style="background-color:gray; color:white" id="data">
+                <tr>
+                    <th>
+                        @Html.DisplayNameFor(model => model.username)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.usertype)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.email)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.password)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.birthday)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.age)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.gender)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.catsize)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.catfur)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.address)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.petkeeping)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.url)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.uphoto)
+                    </th>
+                    <th></th>
+                </tr>
+                <tbody>
+                    @foreach (var item in Model)
+                    {
+                        <tr>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.username)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.usertype)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.email)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.password)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.birthday)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.age)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.gender)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.catsize)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.catfur)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.address)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.petkeeping)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.url)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.uphoto)
+                            </td>
+                            <td>
+                                @Html.ActionLink("Edit", "Edit", new { id = item.Id }, new { style = "Font-Size:16px; font-family:sheep sans; color:black" })
+                                @Html.ActionLink("Details", "Details", new { id = item.Id }, new { style = "Font-Size:16px; font-family:sheep sans; color:black" })
+                                @Html.ActionLink("Delete", "Delete", new { id = item.Id }, new { style = "Font-Size:16px; font-family:sheep sans; color:black" })
+                            </td>
+                        </tr>
+                    }
+                </tbody>
+                
+
+            </table>
+        </div>
+</section>
+
+

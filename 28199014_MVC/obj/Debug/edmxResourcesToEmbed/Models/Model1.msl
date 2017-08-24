@@ -1,0 +1,55 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="ModelStoreContainer" CdmEntityContainer="Entities">
+    <EntitySetMapping Name="Cat">
+      <EntityTypeMapping TypeName="Model.Cat">
+        <MappingFragment StoreEntitySet="Cat">
+          <ScalarProperty Name="cid" ColumnName="cid" />
+          <ScalarProperty Name="breed" ColumnName="breed" />
+          <ScalarProperty Name="cgender" ColumnName="cgender" />
+          <ScalarProperty Name="csize" ColumnName="csize" />
+          <ScalarProperty Name="cfur" ColumnName="cfur" />
+          <ScalarProperty Name="color" ColumnName="color" />
+          <ScalarProperty Name="country" ColumnName="country" />
+          <ScalarProperty Name="cage" ColumnName="cage" />
+          <ScalarProperty Name="lifeTime" ColumnName="lifeTime" />
+          <ScalarProperty Name="cpic" ColumnName="cpic" />
+          <ScalarProperty Name="cthumbnail" ColumnName="cthumbnail" />
+          <ScalarProperty Name="nickname" ColumnName="nickname" />
+          <ScalarProperty Name="discription" ColumnName="discription" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Order">
+      <EntityTypeMapping TypeName="Model.Order">
+        <MappingFragment StoreEntitySet="Order">
+          <ScalarProperty Name="oid" ColumnName="oid" />
+          <ScalarProperty Name="orderData" ColumnName="orderData" />
+          <ScalarProperty Name="orderDescription" ColumnName="orderDescription" />
+          <ScalarProperty Name="orderuid" ColumnName="orderuid" />
+          <ScalarProperty Name="ordercid" ColumnName="ordercid" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="User">
+      <EntityTypeMapping TypeName="Model.User">
+        <MappingFragment StoreEntitySet="User">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="username" ColumnName="username" />
+          <ScalarProperty Name="usertype" ColumnName="usertype" />
+          <ScalarProperty Name="email" ColumnName="email" />
+          <ScalarProperty Name="password" ColumnName="password" />
+          <ScalarProperty Name="birthday" ColumnName="birthday" />
+          <ScalarProperty Name="age" ColumnName="age" />
+          <ScalarProperty Name="gender" ColumnName="gender" />
+          <ScalarProperty Name="catsize" ColumnName="catsize" />
+          <ScalarProperty Name="catfur" ColumnName="catfur" />
+          <ScalarProperty Name="address" ColumnName="address" />
+          <ScalarProperty Name="petkeeping" ColumnName="petkeeping" />
+          <ScalarProperty Name="url" ColumnName="url" />
+          <ScalarProperty Name="uphoto" ColumnName="uphoto" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

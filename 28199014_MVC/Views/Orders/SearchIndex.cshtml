@@ -1,0 +1,79 @@
+﻿@model IEnumerable<_28199014_MVC.Models.Order>
+
+@{
+    ViewBag.Title = "SearchIndex";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<section id="contact" style="padding-top:0px; padding-bottom:50px">
+    <div class="container">
+        <div class="row">
+
+            <!-- Section title
+            ================================================== -->
+            <div class="col-md-offset-2 col-md-8 col-sm-offset-2 col-sm-8" style="margin-top:100px">
+                <div class="section-title">
+
+                    <h1 class="heading" runat="server">Order</h1>
+                    <p style="color:rgb(108, 105, 105);">Shall I compare thee to a summer's day? Thou art more lovely and more temperate.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="caption" style="width:80%; margin-left:200px">
+        <p style="">
+            @Html.ActionLink("Create New", "Create")
+            @using (Html.BeginForm())
+            {
+                <a>
+                    OrderDescription: @Html.TextBox("searchValue")
+
+                    <input type="submit" value="Search" />
+                </a>
+            }
+        </p>
+        <table class="table" style="background-color:gray; color:white" id="data">
+            <tr>
+                <th>
+                    @Html.DisplayNameFor(model => model.orderData)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.orderDescription)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Cat.breed)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.User.username)
+                </th>
+                <th></th>
+            </tr>
+            <tbody>
+                @foreach (var item in Model)
+                {
+                    <tr>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.orderData)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.orderDescription)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.Cat.breed)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.User.username)
+                        </td>
+                        <td>
+                            @Html.ActionLink("Edit", "Edit", new { id = item.oid }, new { style = "Font-Size:16px; font-family:sheep sans; color:black" })
+                            @Html.ActionLink("Details", "Details", new { id = item.oid }, new { style = "Font-Size:16px; font-family:sheep sans; color:black" })
+                            @Html.ActionLink("Delete", "Delete", new { id = item.oid }, new { style = "Font-Size:16px; font-family:sheep sans; color:black" })
+                        </td>
+                    </tr>
+                }
+            </tbody>
+            
+
+        </table>
+    </div>
+</section>

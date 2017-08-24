@@ -1,0 +1,63 @@
+﻿@model IEnumerable<_28199014_MVC.Models.Order>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+    
+</p>
+<p>
+    @using (Html.BeginForm())
+    {
+        <a>
+            Fur: @Html.TextBox("searchValue")<br />
+            <input type="submit" value="Search" />
+        </a>
+    }
+</p>
+
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.orderData)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.orderDescription)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Cat.breed)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.User.username)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.orderData)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.orderDescription)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Cat.breed)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.User.username)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.oid }) |
+            @Html.ActionLink("Details", "Details", new { id=item.oid }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.oid })
+        </td>
+    </tr>
+}
+
+</table>

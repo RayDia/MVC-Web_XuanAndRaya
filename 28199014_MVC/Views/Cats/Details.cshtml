@@ -1,0 +1,129 @@
+﻿@model _28199014_MVC.Models.Cat
+
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<section id="contact" style="padding-top:0px; padding-bottom:50px">
+    <div class="container">
+        <div class="row">
+
+            <!-- Section title
+            ================================================== -->
+            <div class="col-md-offset-2 col-md-8 col-sm-offset-2 col-sm-8" style="margin-top:100px">
+                <div class="section-title">
+
+                    <h1 class="heading" runat="server">Details of Cat</h1>
+                    <p style="color:rgb(108, 105, 105);">Shall I compare thee to a summer's day? Thou art more lovely and more temperate.</p>
+                </div>
+            </div>
+        </div>
+
+        <div>
+            <hr />
+            <dl class="dl-horizontal">
+                <dt>
+                    @Html.DisplayNameFor(model => model.breed)
+                </dt>
+
+                <dd>
+                    @Html.DisplayFor(model => model.breed)
+                </dd>
+
+                <dt>
+                    @Html.DisplayNameFor(model => model.cgender)
+                </dt>
+
+                <dd>
+                    @Html.DisplayFor(model => model.cgender)
+                </dd>
+
+                <dt>
+                    @Html.DisplayNameFor(model => model.csize)
+                </dt>
+
+                <dd>
+                    @Html.DisplayFor(model => model.csize)
+                </dd>
+
+                <dt>
+                    @Html.DisplayNameFor(model => model.cfur)
+                </dt>
+
+                <dd>
+                    @Html.DisplayFor(model => model.cfur)
+                </dd>
+
+                <dt>
+                    @Html.DisplayNameFor(model => model.color)
+                </dt>
+
+                <dd>
+                    @Html.DisplayFor(model => model.color)
+                </dd>
+
+                <dt>
+                    @Html.DisplayNameFor(model => model.country)
+                </dt>
+
+                <dd>
+                    @Html.DisplayFor(model => model.country)
+                </dd>
+
+                <dt>
+                    @Html.DisplayNameFor(model => model.cage)
+                </dt>
+
+                <dd>
+                    @Html.DisplayFor(model => model.cage)
+                </dd>
+
+                <dt>
+                    @Html.DisplayNameFor(model => model.lifeTime)
+                </dt>
+
+                <dd>
+                    @Html.DisplayFor(model => model.lifeTime)
+                </dd>
+
+                <dt>
+                    @Html.DisplayNameFor(model => model.cpic)
+                </dt>
+
+                <dd>
+                    @Html.DisplayFor(model => model.cpic)
+                </dd>
+
+                <dt>
+                    @Html.DisplayNameFor(model => model.cthumbnail)
+                </dt>
+
+                <dd>
+                    @Html.DisplayFor(model => model.cthumbnail)
+                </dd>
+
+                <dt>
+                    @Html.DisplayNameFor(model => model.nickname)
+                </dt>
+
+                <dd>
+                    @Html.DisplayFor(model => model.nickname)
+                </dd>
+
+                <dt>
+                    @Html.DisplayNameFor(model => model.discription)
+                </dt>
+
+                <dd>
+                    @Html.DisplayFor(model => model.discription)
+                </dd>
+
+            </dl>
+        </div>
+    </div>
+</section>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.cid }) |
+    @Html.ActionLink("Back to List", "SearchIndex")
+</p>
